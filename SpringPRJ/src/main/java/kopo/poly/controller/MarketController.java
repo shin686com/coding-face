@@ -1,22 +1,21 @@
 package kopo.poly.controller;
 
-import kopo.poly.service.IMarketService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@Slf4j
 @Controller
-@RequiredArgsConstructor
+@Slf4j
 public class MarketController {
-
-    private final IMarketService marketService;
-
-
-
-
-
-
+    @GetMapping("/mypage")
+    public String mypage() throws Exception
+    {
+        log.info("{}.indexPage Start !!",this.getClass().getName());
+        log.info("{}.indexPage End !!",this.getClass().getName());
+        return "/mypage";
+    }
+    @GetMapping(path = "/main")
+    public String main()throws Exception {
+        return "/index";
+    }
 }
-
-
